@@ -1,0 +1,7 @@
+custom_rules:
+  uiimage_named_init_use: # rule identifier
+    name: "UIImage initialised directly with name string" # rule name. optional.
+    # regex: "([n,N]inja)"
+    regex: "(UIImage(.init)*\\(named:)"
+    message: "Use UIImage(asset:) instead" # violation message. optional.
+    severity: warning # violation severity. optional.

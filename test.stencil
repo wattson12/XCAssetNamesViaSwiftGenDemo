@@ -1,0 +1,21 @@
+import UIKit
+{% macro enumBlock assets sp %}
+{{sp}}  {% call casesBlock assets sp %}
+{% endmacro %}
+{% macro casesBlock assets sp %}
+{{sp}}  {% for asset in assets %}
+{{sp}}  case {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}
+{{sp}}  {% endfor %}
+{% endmacro %}
+
+extension UIImage {
+    convenience init?(asset: {{param.enumName|default:"AllAssets"}}) {
+        self.init(named: asset.rawValue)
+    }
+}
+
+enum {{param.enumName|default:"AllAssets"}}: String {
+{% for catalog in catalogs %}
+  {% call enumBlock catalog.assets "  " %}
+{% endfor %}
+}

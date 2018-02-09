@@ -1,0 +1,6 @@
+framework module Pods_TestingCodegen {
+  umbrella header "Pods-TestingCodegen-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,8 @@
+xcassets:
+  paths:
+   - TestingCodegen/Assets.xcassets
+   - TestingCodegen/Media.xcassets
+  templatePath: test.stencil
+  params:
+    enumName: "XCAssets"
+  output: Generated/assets-images.swift
